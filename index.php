@@ -1,7 +1,9 @@
 
 <?php 
     $title = 'Index';
-    require_once 'includes/header.php'; ?>
+    require_once 'includes/header.php'; 
+    require_once 'db/conn.php'; 
+    ?>
 <!-- 
     - First name
     - Last Name
@@ -12,20 +14,20 @@
  -->
     <h1 class="text-center">Registration for IT Conference</h1>
 
-    <form method="get" action="success.php">
-    <div class="mb-3">
+    <form method="post" action="success.php">
+    <div class="form-group">
             <label for="firstname">First Name</label>
             <input type="text" class="form-control" id="firstname" name="firstname">
         </div>
-        <div class="mb-3">
+        <div class="form-group">
             <label for="lastname">Last Name</label>
             <input type="text" class="form-control" id="lastname" name="lastname">
         </div>
-        <div class="mb-3">
+        <div class="form-group">
             <label for="dob">Date Of Birth</label>
             <input type="text" class="form-control" id="dob" name="dob">
         </div>
-        <div class="mb-3">
+        <div class="form-group">
             <label for="specialty">Area of Expertise</label>
             <select class="form-control" id="specialty" name="specialty">
                 <option>Database Admin<option>
@@ -34,13 +36,13 @@
                 <option>Other<option>
             </select>
         </div>
-    <div class="mb-3">
+    <div class="form-group">
             <label for="Email">Email address</label>
             <input type="email" class="form-control" id="email" name="email"
              aria-describedby="emailHelp">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
-        <div class="mb-3">
+        <div class="form-group">
             <label for="phone">Contact Number</label>
             <input type="text" class="form-control" id="phone" name="phone"
              aria-describedby="phoneHelp">
