@@ -13,7 +13,7 @@
     - Contact Number
  -->
     <h1 class="text-center">Registration for IT Conference</h1>
-
+    
     <form method="post" action="success.php">
     <div class="form-group">
             <label for="firstname">First Name</label>
@@ -30,7 +30,7 @@
         <div class="form-group">
             <label for="specialty">Area of Expertise</label>
             <select class="form-control" id="specialty" name="specialty">
-                <option>Database Admin<option>
+                <option value="1">Database Admin<option>
                 <option>Software Developer<option>
                 <option>Web Administrator<option>
                 <option>Other<option>

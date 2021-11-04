@@ -1,8 +1,31 @@
 <?php 
     $title = 'Success';
-    require_once 'includes/header.php'; ?>
+    require_once 'includes/header.php'; 
+    require_once 'db/conn.php';
 
-    <h1 class="text-center text-success">Your Registration Was Successful!</h1>
+    if (isset($_POST['submit'])){
+        //extract values from the $_POST array
+        $fname = $_POST['firstname'];
+        $lname = $_POST['lastname'];
+        $dob = $_POST['dob'];
+        $email = $_POST['email'];
+        $contact = $_POST['phone'];
+        $specialty = $_POST['specialty'];
+        //call function to insert and track if success or not
+        $isSuccess = $crud->insert($fname, $lname, $dob, $email, $contact, $specialty);
+
+        if($isSuccess){
+            echo '<h1 class="text-center text-success">Your Registration Was Successful!</h1>';
+        }
+        else{
+            echo '<h1 class="text-center text-danger">There was an error processing</h1>';
+        }
+        }
+    //}
+    
+    ?>
+
+    <!-- <h1 class="text-center text-success">Your Registration Was Successful!</h1> -->
 <!-- this prints out values that were passed to the action page using METHOD GET -->
     <!-- <div class="card" style="width: 18rem;">
     <div class="card-body">
