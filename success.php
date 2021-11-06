@@ -12,7 +12,7 @@
         $contact = $_POST['phone'];
         $specialty = $_POST['specialty'];
         //call function to insert and track if success or not
-        $isSuccess = $crud->insert($fname, $lname, $dob, $email, $contact, $specialty);
+        $isSuccess = $crud->insertAttendees($fname, $lname, $dob, $email, $contact, $specialty);
 
         if($isSuccess){
             echo '<h1 class="text-center text-success">Your Registration Was Successful!</h1>';
@@ -52,24 +52,18 @@
     </div>   -->
 
 <!-- this prints out values that were passed to the action page using METHOD GET -->
-     <div class="card" style="width: 18rem;">
+<div class="card" style="width: 18rem;">
     <div class="card-body">
         <h5 class="card-title"> <?php echo $_POST['firstname'] . '' . $_POST['lastname'];?></h5>
         <h6 class="card-subtitle mb-2 text-muted">
-
-        <?php echo $_POST['specialty']?>
-
-        </h6>
-
-        <p class="card-text">
-        Date Of Birth: <?php echo $_POST['dob']?>
-        </p>
-
-        <p class="card-text">
-        Email Address: <?php echo $_POST['email']?>
-        </p>
-
-
+         <?php echo $_POST['specialty']?>
+            </h6>
+             <p class="card-text">
+              Date Of Birth: <?php echo $_POST['dob']?>
+             </p>
+             <p class="card-text">
+             Email Address: <?php echo $_POST['email']?>
+             </p>
         <p class="card-text">
         Contact Number: <?php echo $_POST['phone']?>
         </p>   
