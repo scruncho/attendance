@@ -15,10 +15,12 @@
         $isSuccess = $crud->insertAttendees($fname, $lname, $dob, $email, $contact, $specialty);
 
         if($isSuccess){
-            echo '<h1 class="text-center text-success">Your Registration Was Successful!</h1>';
+           // echo '<h1 class="text-center text-success">Your Registration Was Successful!</h1>';
+           include 'includes/successmessage.php';
         }
         else{
-            echo '<h1 class="text-center text-danger">There was an error processing</h1>';
+            //echo '<h1 class="text-center text-danger">There was an error processing</h1>';
+            include 'includes/errormessage.php';
         }
         }
     //}
@@ -54,7 +56,7 @@
 <!-- this prints out values that were passed to the action page using METHOD GET -->
 <div class="card" style="width: 18rem;">
     <div class="card-body">
-        <h5 class="card-title"> <?php echo $_POST['firstname'] . '' . $_POST['lastname'];?></h5>
+        <h5 class="card-title"> <?php echo $_POST['firstname'] . ' ' . $_POST['lastname'];?></h5>
         <h6 class="card-subtitle mb-2 text-muted">
          <?php echo $_POST['specialty']?>
             </h6>
