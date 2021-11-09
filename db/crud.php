@@ -5,13 +5,13 @@
 
             //constructor to initialize private variable to the database connection
             function __construct($conn){
-                $this->db = $conn;
+            $this->db = $conn;
             }
             //function to insert a new record into the attendee database
             public function insertAttendees($fname, $lname, $dob, $email, $contact, $specialty){
             try {
             //define squl statement to be executed
-              $sql = "INSERT INTO attendee (firstname,lastname,dateofbirth,emailaddress,contactnumber,specialty_id)VALUES (:fname,:lname,:dob,:email,:contact,:specialty)";
+            $sql = "INSERT INTO attendee (firstname,lastname,dateofbirth,emailaddress,contactnumber,specialty_id)VALUES (:fname,:lname,:dob,:email,:contact,:specialty)";
             //prepare the sql statement for execution
             $stmt = $this->db->prepare($sql);
             //bind all placeholders to the actual values
@@ -110,9 +110,9 @@
             return $result;
         }
     
-             catch(PDOException $e) {
-            echo $e->getMessage();
-            return false;
+            catch(PDOException $e) {
+                echo $e->getMessage();
+                return false;
         }
 
     }
